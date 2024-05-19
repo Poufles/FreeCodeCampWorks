@@ -1,0 +1,80 @@
+
+
+/** start of undefined **/
+
+body {
+  background-color: #571515;
+  color: #FFF;
+  font-family: Tahoma;
+}
+
+#title, #description {
+  text-align: center;
+}
+
+#title {
+  font-size: 2.5rem;
+  margin-top: 60px;
+}
+
+#description {
+  font-size: 0.9rem;
+  margin-top: -15px;
+}
+
+form {
+  border: 1px solid #FFF;
+  box-shadow: 0 0 10px 5px #FFF;
+  max-width: 500px;
+  min-width: 300px;
+  width: 50%;
+  margin: 40px auto 0;
+  padding: 30px;
+}
+
+input[type="submit"], select {
+  display: block;
+}
+
+label, legend {
+  font-size: 1.1em;
+  margin: 20px 0 5px;
+}
+
+.text {
+  display: block;
+}
+
+input[type="number"] {
+  margin-bottom: 20px;
+}
+
+select {
+  margin-top: 5px
+}
+
+input[type="text"], input[type="email"], input[type="number"], select, textarea {
+  font-size: 1.1rem;
+  width: 100%;
+  padding: 5px;
+}
+
+input[type="submit"] {
+  margin: 20px auto;
+  padding: 5px 20px;
+  background-color: #ad4739;
+  border: 1px solid #FFF;
+  color: #FFF;
+  font-size: 1.5rem;
+}
+
+fieldset {
+  margin: 20px 0;
+}
+
+textarea {
+  width: 100%;
+  min-width: 250px
+}
+
+/** end of undefined **/
