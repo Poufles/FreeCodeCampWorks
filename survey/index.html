@@ -1,0 +1,81 @@
+<!--** start of undefined **--> 
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"/>
+  <link rel="stylesheet" href="style/styles.css"/>
+  <title>Survey Form</title>
+</head>
+
+<body>
+  <h1 id="title">Survey Form</h1>
+  <p id="description">Evaluation of Customer Service</p>
+  <form id="survey-form">
+    <label for="name" id="name-label" class="text">
+      Customer Name
+    </label>
+      <input id="name" type="text" placeholder="Joe R. Jonas" required/>
+    <label for="email" id="email-label" class="text">
+      Customer Email
+    </label>
+      <input id="email" type="email" placeholder="rJonas@email.com" required/>
+    <label for="number" id="number-label" class="text">
+      Customer Number (Optional) 
+    </label>
+      <input id="number" type="number" placeholder="23" min="10" max="100"/>
+    <label for="dropdown">
+      Type of Room
+    </label>
+      <select id="dropdown">
+        <option value="">Select an option</option>
+        <option value="single">Single</option>
+        <option value="double">Double</option>
+        <option value="deluxe">Deluxe</option>
+        <option value="king">King</option>
+      </select>
+    <fieldset>
+      <legend>Received Service</legend>
+    <label>
+      <input type="checkbox" value="meal"/> On-Time Meal
+    </label>
+    <label>
+      <input type="checkbox" value="pool"/> Spa & Pool
+    </label>
+    <label>
+      <input type="checkbox" value="resto"/> Restaurant
+    </label>
+    <label>
+      <input type="checkbox" value="casino"/> Casino
+    </label>
+    </fieldset>
+    <fieldset>
+      <legend>Overall Rating</legend>
+      <label>
+        <input type="radio" name="rating" value="5" checked/> 5 Stars
+      </label>
+      <label>
+        <input type="radio" value="4" name="rating"/> 4 Stars
+      </label>
+      <label>
+        <input type="radio" value="3" name="rating"/> 3 Stars
+      </label>
+      <label>
+        <input type="radio" value="2" name="rating"/> 2 Stars
+      </label>
+      <label>
+        <input type="radio" value="1" name="rating"/> 1 Stars
+      </label>
+    </fieldset>
+    <label>
+      Comment(s):
+    </label>
+    <textarea rows="5"></textarea>
+    <input id="submit" type="submit" value="Submit"/>
+  </form>
+</body>
+
+</html>
+
+<!--** end of undefined **-->
