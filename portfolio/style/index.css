@@ -1,0 +1,44 @@
+@import url('https://fonts.cdnfonts.com/css/major-mono-display-2'); /* font-family: 'Major Mono Display', sans-serif; */
+@import url('https://fonts.cdnfonts.com/css/safilms-crawford'); /* font-family: 'Safilms Crawford', sans-serif; */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.banner-container {
+    height: 100vh;
+    display: flex;
+}
+
+.left-banner {
+    background-color: red;
+    width: 63.5%;
+    position: relative;
+}
+
+.left-banner::before, .left-banner::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 50%;
+    right: -100px;
+}
+
+.left-banner::before {
+    top: 0;
+    background-image: linear-gradient(-53deg, transparent 20%, red 0%);
+}
+
+.left-banner::after  {
+    bottom: 0;
+    background-image: linear-gradient(53deg, red 80%, transparent 80%);
+}
+
+.right-banner {
+    background-image: url(../src/received_486835430103951.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 36.5%;
+}
