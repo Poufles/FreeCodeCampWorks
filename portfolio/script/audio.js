@@ -1,1 +1,1 @@
-audio.volume = 0.03;
+audio.volume = 0.05;

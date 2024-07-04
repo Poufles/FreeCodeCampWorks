@@ -22,7 +22,7 @@ html {
 
 body {
   background-color: var(--bg-color);
-  font-family: 'Safilms Crawford', sans-serif;
+  font-family: "Safilms Crawford", sans-serif;
   position: relative;
 }
 
@@ -68,13 +68,18 @@ li {
   z-index: 1;
 }
 
-.navbar-container::after, .navbar-container::before {
-  content: '';
+.navbar-container::after,
+.navbar-container::before {
+  content: "";
   position: absolute;
   top: 0;
   width: 30px;
   height: 30px;
-  background-image: radial-gradient(circle at 0% 100%, transparent 30px, #e6e4b92f 30px);
+  background-image: radial-gradient(
+    circle at 0% 100%,
+    transparent 30px,
+    #e6e4b92f 30px
+  );
 }
 
 .navbar-container::before {
@@ -139,6 +144,8 @@ li {
 .corner-top-left {
   border-top: var(--corner-style);
   border-left: var(--corner-style);
+  top: var(--corner-style-width);
+  left: var(--corner-style-width);
 }
 
 .corner-top-right {
@@ -168,7 +175,8 @@ li {
   margin-bottom: 30px;
 }
 
-.banner-left, .banner-right {
+.banner-left,
+.banner-right {
   position: relative;
 }
 
@@ -181,15 +189,20 @@ li {
   justify-content: center;
 }
 
-.banner-left > .title {
+.banner-left .title-container {
+  position: relative;
+}
+
+.banner-left .title-container .title {
   font-size: calc(var(--title-fs) + 1.5rem);
   text-transform: lowercase;
   font-weight: normal;
 }
 
-.banner-left .subtitle {
-  margin-top: -45px;
-  margin-left: -70px;
+.banner-left .title-container .subtitle {
+  position: absolute;
+  bottom: 8%;
+  left: 6%;
 }
 
 .language-container {
@@ -211,34 +224,40 @@ li {
 .language-container svg:hover {
   transform: perspective(500px) rotateX(-25deg) rotateY(15deg);
   filter: drop-shadow(-5px -5px var(--accent-color));
-  -webkit-filter: drop-shadow(-5px -5px var(--accent-color));;
+  -webkit-filter: drop-shadow(-5px -5px var(--accent-color));
 }
 
 .banner-right {
   margin-right: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
-.banner-right::before, .banner-right::after {
-  height: 27%;
-  content: '';
-  border-left: 3px solid var(--accent-color);
-  position: absolute;
-  left: 0;
-  mask-image: linear-gradient(180deg, transparent, black, transparent);
-}
+@media screen and (min-width: 1060px) {
+  .banner-right::before,
+  .banner-right::after {
+    height: 27%;
+    content: "";
+    border-left: 3px solid var(--accent-color);
+    position: absolute;
+    left: 0;
+    mask-image: linear-gradient(180deg, transparent, black, transparent);
+  }
 
-.banner-right::before {
-  top: 7%;
-}
+  .banner-right::before {
+    top: 7%;
+  }
 
-.banner-right::after {
-  bottom: 7%;
+  .banner-right::after {
+    bottom: 7%;
+  }
 }
 
 .banner-right .dot-style {
-  position: absolute;
-  top: 0;
-  right: 0;
+  width: max-content;
+  height: max-content;
   mask-image: linear-gradient(45deg, transparent 20%, black);
 }
 
@@ -250,20 +269,15 @@ li {
 
 .banner-right .description {
   color: var(--accent-color);
-  font-size: var(--subtitle-fs);
   text-align: right;
-  width: 400px;
-  position: absolute;
-  bottom: 50px;
-  right: 0;
+  width: 390px;
 }
 
 .social-container {
+  margin-top: 13px;
   display: flex;
+  justify-content: flex-end;
   gap: 23px;
-  position: absolute;
-  bottom: 0;
-  right: 0;
 }
 
 .social-container svg {
@@ -276,7 +290,7 @@ li {
 .social-container svg:hover {
   transform: perspective(500px) rotateX(-25deg) rotateY(15deg);
   filter: drop-shadow(-3px -3px var(--accent-color));
-  -webkit-filter: drop-shadow(-3px -3px var(--accent-color));;
+  -webkit-filter: drop-shadow(-3px -3px var(--accent-color));
 }
 
 main {
@@ -286,7 +300,7 @@ main {
 main > section:not(.works-section) {
   padding: 75px;
   height: 100vh;
-  min-height: 1000px;
+  min-height: 800px;
   position: relative;
 }
 
@@ -309,7 +323,7 @@ main > section:not(.works-section) {
   position: absolute;
   top: 0;
   left: 0;
-  mask-image: linear-gradient(120deg, black , transparent 80%);
+  mask-image: linear-gradient(120deg, black, transparent 80%);
 }
 
 .me-section .left-page > .dot-style svg {
@@ -321,15 +335,10 @@ main > section:not(.works-section) {
 
 .me-section .left-page > .profile-picture {
   border-radius: 90% 20% 50% 20% / 20% 90% 20% 50%;
-  box-shadow: 
-  20px -20px 0 var(--bg-color),
-  30px -30px 0 var(--accent-color),
-  40px -40px 0 var(--bg-color),
-  50px -50px 0 var(--accent-color),
-  -30px 30px 0 var(--bg-color),
-  -40px 40px 0 var(--accent-color),
-  -60px 60px 0 var(--bg-color),
-  -70px 70px 0 var(--accent-color);
+  box-shadow: 20px -20px 0 var(--bg-color), 30px -30px 0 var(--accent-color),
+    40px -40px 0 var(--bg-color), 50px -50px 0 var(--accent-color),
+    -30px 30px 0 var(--bg-color), -40px 40px 0 var(--accent-color),
+    -60px 60px 0 var(--bg-color), -70px 70px 0 var(--accent-color);
   transform: translate(-50%, -50%) perspective(500px) rotateY(-15deg);
   width: 400px;
   height: 400px;
@@ -341,16 +350,11 @@ main > section:not(.works-section) {
 }
 
 .me-section .left-page > .profile-picture:hover {
-  box-shadow: 
-    -20px -20px 0 var(--bg-color),
-    -30px -30px 0 var(--accent-color),
-    -40px -40px 0 var(--bg-color),
-    -50px -50px 0 var(--accent-color),
-    30px 30px 0 var(--bg-color),
-    40px 40px 0 var(--accent-color),
-    60px 60px 0 var(--bg-color),
-    70px 70px 0 var(--accent-color);
-    transform: translate(-50%, -50%) perspective(500px) rotateY(15deg);
+  box-shadow: -20px -20px 0 var(--bg-color), -30px -30px 0 var(--accent-color),
+    -40px -40px 0 var(--bg-color), -50px -50px 0 var(--accent-color),
+    30px 30px 0 var(--bg-color), 40px 40px 0 var(--accent-color),
+    60px 60px 0 var(--bg-color), 70px 70px 0 var(--accent-color);
+  transform: translate(-50%, -50%) perspective(500px) rotateY(15deg);
 }
 
 .me-section .left-page > .profile-picture img {
@@ -365,22 +369,24 @@ main > section:not(.works-section) {
   position: relative;
 }
 
-.me-section .right-page::before {
-  content: '';
-  border-left: 3px solid var(--accent-color);
-  height: 350px;
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
-  mask-image: linear-gradient(180deg, transparent, #000, transparent);
+@media screen and (min-width: 1060px) {
+  .me-section .right-page::before {
+    content: "";
+    border-left: 3px solid var(--accent-color);
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    mask-image: linear-gradient(180deg, transparent, #000, transparent);
+  }
 }
 
 .me-section .right-page > .dot-style {
   position: absolute;
   bottom: 0;
   right: 0;
-  mask-image: linear-gradient(120deg, transparent 20% , #000);
+  mask-image: linear-gradient(120deg, transparent 20%, #000);
 }
 
 .me-section .right-page > .dot-style svg {
@@ -428,8 +434,8 @@ main > section:not(.works-section) {
 }
 
 .me-section .right-page > .extra-wrapper .extra-container .fun-fact {
-  background-color: #FFF;
-  border: 1px solid #FFF;
+  background-color: #fff;
+  border: 1px solid #fff;
   border-radius: 10px;
   color: #000;
   font-size: 1.1rem;
@@ -444,8 +450,8 @@ main > section:not(.works-section) {
 }
 
 .me-section .right-page > .extra-wrapper .extra-container .fun-fact::after {
-  content: '';
-  border-top: 10px solid #FFF;
+  content: "";
+  border-top: 10px solid #fff;
   border-left: 10px solid transparent;
   border-bottom: 10px solid transparent;
   border-right: 10px solid transparent;
@@ -455,7 +461,12 @@ main > section:not(.works-section) {
   transform: translateX(-50%);
 }
 
-.me-section .right-page > .extra-wrapper .extra-container .hidden-fact:hover + .fun-fact {
+.me-section
+  .right-page
+  > .extra-wrapper
+  .extra-container
+  .hidden-fact:hover
+  + .fun-fact {
   display: block;
 }
 
@@ -526,14 +537,11 @@ main > section:not(.works-section) {
 }
 
 .project-tile::after {
-  border: 14px double #FFF;
+  border: 14px double #fff;
   width: 100px;
   height: 100px;
-  transform: 
-    perspective(500px) 
-    rotateX(-50deg) 
-    rotateY(35deg);
-  content: '';
+  transform: perspective(500px) rotateX(-50deg) rotateY(35deg);
+  content: "";
   position: absolute;
   top: 75%;
   left: 78%;
@@ -590,7 +598,7 @@ main > section:not(.works-section) {
 }
 
 .project-tile .project {
-  border: 3px solid #FFF;
+  border: 3px solid #fff;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -624,7 +632,7 @@ main > section:not(.works-section) {
 }
 
 .project-tile .picture-frame:has(~ .project:hover) {
- z-index: -0;
+  z-index: -0;
 }
 
 .contact-section {
@@ -638,7 +646,7 @@ main > section:not(.works-section) {
 
 .contact-section .dot-style:first-of-type {
   top: 0;
-  left: 0;  
+  left: 0;
   transform: rotate(180deg);
   mask-image: linear-gradient(120deg, transparent 20%, #000);
 }
@@ -657,7 +665,7 @@ main > section:not(.works-section) {
 
 .contact-section .dot-style:nth-of-type(4) {
   bottom: 0;
-  left: 0;  
+  left: 0;
   transform: rotate(180deg);
   mask-image: linear-gradient(45deg, transparent 20%, #000);
 }
@@ -690,7 +698,7 @@ main > section:not(.works-section) {
   border-top: 3px solid var(--accent-color);
   mask-image: linear-gradient(90deg, transparent, #000, transparent);
   width: 500px;
-  content: '';
+  content: "";
   position: absolute;
   top: 90%;
   left: 50%;
@@ -742,7 +750,7 @@ main > section:not(.works-section) {
 .contact-content .social-contact-container svg:hover {
   transform: perspective(500px) rotateX(-25deg) rotateY(15deg);
   filter: drop-shadow(-3px -3px var(--accent-color));
-  -webkit-filter: drop-shadow(-3px -3px var(--accent-color));;
+  -webkit-filter: drop-shadow(-3px -3px var(--accent-color));
 }
 
 footer {
@@ -756,7 +764,7 @@ footer::after {
   border-top: 3px solid var(--accent-color);
   mask-image: linear-gradient(90deg, transparent, #000, transparent);
   width: 700px;
-  content: '';
+  content: "";
   position: absolute;
   bottom: 10%;
   left: 50%;
